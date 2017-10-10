@@ -1,0 +1,15 @@
+{
+  "name": "oregon-state-university-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-oauth2-promise": "^0.3.0"
+  }
+}
