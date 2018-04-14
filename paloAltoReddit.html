@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+</head>
+<header>
+<br>
+</header>
+<style>
+h2 {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+h2 span { 
+    background:#fff; 
+    padding:0 10px; 
+}
+</style>
+<body>
+<div class='container'>
+<h2 style="text-align:center"><span>r/Business</span></h2>
+<br>
+<div align="center"><img src="C:\Users\ramak\Desktop\DevHW\upCircle.png" alt="Up"></div>
+<br>
+<div id='business'></div>
+<div align="center"><img src="C:\Users\ramak\Desktop\DevHW\downCircle.png" alt="Down"></div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+    $.getJSON("http://www.reddit.com/r/business" + ".json?jsonp=?", function (data){
+		//console.log(data.data.children);
+		var child = data.data.children;
+		child.forEach(function(ch) {
+			$('#business').append('<div class="jumbotron" style="padding: 2rem 1rem;">'+ '<h4>'+ ch.data.title+'<h4>'+'<hr>'+'<h5 style="color:cornflowerblue;float:left;">'+ch.data.num_comments+' comments<h5>'+'<h5 style="float:right">Submitted by '+ch.data.author+'<h5>'+'</div>');
+		})
+	});
+});
+</script>
+<footer>
+<br>
+</footer>
+</html>
